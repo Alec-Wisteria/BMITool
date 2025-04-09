@@ -32,7 +32,7 @@ app.post("/signup", (req, res) => {
       [name, email, password], 
       (err, result) => {
           if (err) return res.status(500).json({ error: err.message });
-          res.json({ message: "User registered! Please check your email to confirm!!!!" });
+          res.json({ message: "User registered! Please check your email to confirm" });
       }
   );
 });
