@@ -344,21 +344,8 @@ social-container {
         console.error("Error:", error);
         alert("Error: " + error.message);
     } else {
-        // Insert the user profile data into the profiles table
-        const { error: insertError } = await supabase
-            .from('profiles')
-            .insert([
-                { id: user.id, name: name } // Save name to profiles table using the Supabase user id
-            ]);
-
-        if (insertError) {
-            console.error("Error inserting profile:", insertError);
-            alert("Error saving profile information.");
-        } else {
-            console.log("Profile data saved.");
-            alert("User registered and profile saved successfully!");
-            container.classList.remove("right-panel-active");
-        }
+        console.log("User registered successfully:", user);
+        alert("User registered successfully!");
     }
 }
 
